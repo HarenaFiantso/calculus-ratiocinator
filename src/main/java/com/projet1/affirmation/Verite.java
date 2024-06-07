@@ -1,19 +1,20 @@
 package com.projet1.affirmation;
 
 import com.projet1.Affirmation;
-import lombok.AllArgsConstructor;
 
-@AllArgsConstructor
 public class Verite extends Affirmation {
-  private String description;
 
-  @Override
-  public String getDescription() {
-    return description;
+  public Verite(String affirmation) {
+    super(affirmation);
   }
 
   @Override
-  public Boolean getValeur() {
-    return true;
+  public String getDescription() {
+    return affirmation;
+  }
+
+  @Override
+  public String getValeur() {
+    return "vrai";
   }
 }

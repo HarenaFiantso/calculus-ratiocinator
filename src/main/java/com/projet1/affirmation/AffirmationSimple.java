@@ -3,18 +3,24 @@ package com.projet1.affirmation;
 import com.projet1.Affirmation;
 import lombok.AllArgsConstructor;
 
-@AllArgsConstructor
 public class AffirmationSimple extends Affirmation {
-  private String description;
   private Boolean valeur;
 
-  @Override
-  public String getDescription() {
-    return description;
+  public AffirmationSimple(String affirmation, Boolean valeur) {
+    super(affirmation);
+    this.valeur = valeur;
   }
 
   @Override
-  public Boolean getValeur() {
-    return valeur;
+  public String getDescription() {
+    return affirmation;
+  }
+
+  @Override
+  public String getValeur() {
+    if (valeur == null) {
+      return "jenesaispas";
+    }
+    return valeur ? "vrai" : "faux";
   }
 }

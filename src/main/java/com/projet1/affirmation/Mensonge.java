@@ -3,17 +3,19 @@ package com.projet1.affirmation;
 import com.projet1.Affirmation;
 import lombok.AllArgsConstructor;
 
-@AllArgsConstructor
 public class Mensonge extends Affirmation {
-  private String description;
 
-  @Override
-  public String getDescription() {
-    return description;
+  public Mensonge(String affirmation) {
+    super(affirmation);
   }
 
   @Override
-  public Boolean getValeur() {
-    return false;
+  public String getDescription() {
+    return affirmation;
+  }
+
+  @Override
+  public String getValeur() {
+    return "faux";
   }
 }
