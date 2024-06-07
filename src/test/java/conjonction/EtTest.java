@@ -18,13 +18,13 @@ class EtTest {
     Affirmation affirmation = new AffirmationSimple("Lou est généreux", null);
 
     Et et1 = new Et(verite, verite);
-    assertTrue(et1.getValeur());
+    assertEquals("vrai", et1.getValeur());
 
     Et et2 = new Et(verite, mensonge);
-    assertFalse(et2.getValeur());
+    assertEquals("faux", et2.getValeur());
 
     Et et3 = new Et(verite, affirmation);
-    assertNull(et3.getValeur());
+    assertEquals("jenesaispas", et3.getValeur());
   }
 
   @Test

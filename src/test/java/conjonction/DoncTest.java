@@ -18,16 +18,16 @@ class DoncTest {
     Affirmation affirmation = new AffirmationSimple("Lou est généreux", null);
 
     Donc donc1 = new Donc(verite, mensonge);
-    assertFalse(donc1.getValeur());
+    assertEquals("faux", donc1.getValeur());
 
     Donc donc2 = new Donc(mensonge, verite);
-    assertTrue(donc2.getValeur());
+    assertEquals("vrai", donc2.getValeur());
 
     Donc donc3 = new Donc(verite, affirmation);
-    assertNull(donc3.getValeur());
+    assertEquals("jenesaispas", donc3.getValeur());
 
     Donc donc4 = new Donc(mensonge, affirmation);
-    assertNull(donc4.getValeur());
+    assertEquals("vrai", donc4.getValeur());
   }
 
   @Test

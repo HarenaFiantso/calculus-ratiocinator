@@ -18,16 +18,16 @@ class OuTest {
     Affirmation affirmation = new AffirmationSimple("Lou est généreux", null);
 
     Ou ou1 = new Ou(verite, mensonge);
-    assertTrue(ou1.getValeur());
+    assertEquals("vrai", ou1.getValeur());
 
     Ou ou2 = new Ou(mensonge, mensonge);
-    assertFalse(ou2.getValeur());
+    assertEquals("faux", ou2.getValeur());
 
     Ou ou3 = new Ou(mensonge, affirmation);
-    assertNull(ou3.getValeur());
+    assertEquals("jenesaispas", ou3.getValeur());
 
     Ou ou4 = new Ou(verite, affirmation);
-    assertTrue(ou4.getValeur());
+    assertEquals("vrai", ou4.getValeur());
   }
 
   @Test

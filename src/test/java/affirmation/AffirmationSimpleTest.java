@@ -10,12 +10,12 @@ class AffirmationSimpleTest {
   @Test
   void lou_est_genereux() {
     AffirmationSimple affirmationVraie = new AffirmationSimple("Lou est généreux", true);
-    assertTrue(affirmationVraie.getValeur());
+    assertEquals("vrai", affirmationVraie.getValeur());
 
     AffirmationSimple affirmationFausse = new AffirmationSimple("Lou est généreux", false);
-    assertFalse(affirmationFausse.getValeur());
+    assertEquals("faux", affirmationFausse.getValeur());
 
     AffirmationSimple affirmationNull = new AffirmationSimple("Lou est généreux", null);
-    assertNull(affirmationNull.getValeur());
+    assertEquals("jenesaispas", affirmationNull.getValeur());
   }
 }
