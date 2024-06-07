@@ -14,12 +14,16 @@ public class Et extends Conjonction {
   }
 
   @Override
-  public Boolean getValeur() {
-    Boolean valeur1 = affirmation1.getValeur();
-    Boolean valeur2 = affirmation2.getValeur();
+  public String getValeur() {
+    String valeur1 = affirmation1.getValeur();
+    String valeur2 = affirmation2.getValeur();
 
-    if (valeur1 != null && valeur2 != null) return valeur1 && valeur2;
-
-    return null;
+    if ("vrai".equals(valeur1) && "vrai".equals(valeur2)) {
+      return "vrai";
+    } else if ("faux".equals(valeur1) || "faux".equals(valeur2)) {
+      return "faux";
+    } else {
+      return "jenesaispas";
+    }
   }
 }

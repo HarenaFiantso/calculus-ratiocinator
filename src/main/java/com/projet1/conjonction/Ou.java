@@ -4,8 +4,8 @@ import com.projet1.Affirmation;
 
 public class Ou extends Conjonction {
 
-  public Ou(Affirmation affirmation1, Affirmation affirmation2) {
-    super(affirmation1, affirmation2);
+  public Ou(Affirmation a1, Affirmation a2) {
+    super(a1, a2);
   }
 
   @Override
@@ -14,14 +14,16 @@ public class Ou extends Conjonction {
   }
 
   @Override
-  public Boolean getValeur() {
-    Boolean valeur1 = affirmation1.getValeur();
-    Boolean valeur2 = affirmation2.getValeur();
+  public String getValeur() {
+    String valeur1 = affirmation1.getValeur();
+    String valeur2 = affirmation2.getValeur();
 
-    if (valeur1 != null && valeur2 != null) return valeur1 || valeur2;
-    if (valeur1 != null && valeur1) return true;
-    if (valeur2 != null && valeur2) return true;
-
-    return null;
+    if ("vrai".equals(valeur1) || "vrai".equals(valeur2)) {
+      return "vrai";
+    } else if ("faux".equals(valeur1) && "faux".equals(valeur2)) {
+      return "faux";
+    } else {
+      return "jenesaispas";
+    }
   }
 }

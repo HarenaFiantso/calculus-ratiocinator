@@ -14,17 +14,16 @@ public class Donc extends Conjonction {
   }
 
   @Override
-  public Boolean getValeur() {
-    Boolean valeur1 = affirmation1.getValeur();
-    Boolean valeur2 = affirmation2.getValeur();
+  public String getValeur() {
+    String v1 = affirmation1.getValeur();
+    String v2 = affirmation2.getValeur();
 
-    if (valeur1 != null && valeur2 != null) {
-      if (valeur1 && !valeur2) {
-        return false;
-      }
-      return true;
+    if ("vrai".equals(v1) && "faux".equals(v2)) {
+      return "faux";
+    } else if ("faux".equals(v1) || "vrai".equals(v2)) {
+      return "vrai";
+    } else {
+      return "jenesaispas";
     }
-
-    return null;
   }
 }
