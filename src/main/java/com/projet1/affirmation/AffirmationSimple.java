@@ -1,10 +1,12 @@
 package com.projet1.affirmation;
 
 import com.projet1.Affirmation;
+import lombok.AllArgsConstructor;
 
+@AllArgsConstructor
 public class AffirmationSimple extends Affirmation {
   private String description;
-  private boolean valeur;
+  private Boolean valeur;
 
   @Override
   public String getDescription() {
