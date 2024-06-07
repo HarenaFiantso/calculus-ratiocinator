@@ -1,8 +1,11 @@
 package com.projet1.conjonction;
 
-import com.projet1.Affirmation;
+import com.projet1.affirmation.Affirmation;
 
-public class Et extends Conjonction {
+public final class Et extends Conjonction {
+
+  private static final String VRAI = "vrai";
+  private static final String FAUX = "faux";
 
   public Et(Affirmation affirmation1, Affirmation affirmation2) {
     super(affirmation1, affirmation2);
@@ -18,12 +21,11 @@ public class Et extends Conjonction {
     String valeur1 = affirmation1.getValeur();
     String valeur2 = affirmation2.getValeur();
 
-    if ("vrai".equals(valeur1) && "vrai".equals(valeur2)) {
-      return "vrai";
-    } else if ("faux".equals(valeur1) || "faux".equals(valeur2)) {
-      return "faux";
-    } else {
-      return "jenesaispas";
+    if (VRAI.equals(valeur1) && VRAI.equals(valeur2)) {
+      return VRAI;
+    } else if (FAUX.equals(valeur1) || FAUX.equals(valeur2)) {
+      return FAUX;
     }
+    return super.getValeur();
   }
 }
