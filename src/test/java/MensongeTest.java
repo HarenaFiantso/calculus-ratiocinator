@@ -1,7 +1,7 @@
+import static org.junit.jupiter.api.Assertions.assertFalse;
+
 import com.projet1.affirmation.Mensonge;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.assertFalse;
 
 class MensongeTest {
 
