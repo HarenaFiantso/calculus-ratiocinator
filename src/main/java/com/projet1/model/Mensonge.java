@@ -12,7 +12,7 @@ public class Mensonge extends Affirmation {
   }
 
   @Override
-  public boolean getValeur() {
+  public Boolean getValeur() {
     return false;
   }
 }

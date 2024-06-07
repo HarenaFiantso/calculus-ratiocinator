@@ -12,7 +12,7 @@ public class Verite extends Affirmation {
   }
 
   @Override
-  public boolean getValeur() {
+  public Boolean getValeur() {
     return true;
   }
 }

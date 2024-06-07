@@ -10,7 +10,7 @@ public class AffirmationSimple extends Affirmation {
   }
 
   @Override
-  public boolean getValeur() {
+  public Boolean getValeur() {
     return valeur;
   }
 }
