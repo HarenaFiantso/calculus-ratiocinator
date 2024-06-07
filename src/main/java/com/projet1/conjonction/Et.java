@@ -1,4 +1,4 @@
-package com.projet1.affirmationAvecConjonction;
+package com.projet1.conjonction;
 
 import com.projet1.Affirmation;
 
@@ -18,8 +18,8 @@ public class Et extends Conjonction {
     Boolean valeur1 = affirmation1.getValeur();
     Boolean valeur2 = affirmation2.getValeur();
 
-    if (valeur1 == null && valeur2 == null) return null;
+    if (valeur1 != null && valeur2 != null) return valeur1 && valeur2;
 
-    return valeur1 && valeur2;
+    return null;
   }
 }

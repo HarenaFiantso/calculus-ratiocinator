@@ -1,4 +1,4 @@
-package com.projet1.affirmationAvecConjonction;
+package com.projet1.conjonction;
 
 import com.projet1.Affirmation;
 import lombok.AllArgsConstructor;
