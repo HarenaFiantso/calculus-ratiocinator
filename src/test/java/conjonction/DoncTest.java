@@ -6,10 +6,10 @@ import com.projet1.Affirmation;
 import com.projet1.affirmation.AffirmationSimple;
 import com.projet1.affirmation.Mensonge;
 import com.projet1.affirmation.Verite;
-import com.projet1.conjonction.Et;
+import com.projet1.conjonction.Donc;
 import org.junit.jupiter.api.Test;
 
-class EtTest {
+class DoncTest {
 
   @Test
   void test_get_valeur() {
@@ -17,14 +17,17 @@ class EtTest {
     Affirmation mensonge = new Mensonge("Lou est pauvre");
     Affirmation affirmation = new AffirmationSimple("Lou est généreux", null);
 
-    Et et1 = new Et(verite, verite);
-    assertTrue(et1.getValeur());
+    Donc donc1 = new Donc(verite, mensonge);
+    assertFalse(donc1.getValeur());
 
-    Et et2 = new Et(verite, mensonge);
-    assertFalse(et2.getValeur());
+    Donc donc2 = new Donc(mensonge, verite);
+    assertTrue(donc2.getValeur());
 
-    Et et3 = new Et(verite, affirmation);
-    assertNull(et3.getValeur());
+    Donc donc3 = new Donc(verite, affirmation);
+    assertNull(donc3.getValeur());
+
+    Donc donc4 = new Donc(mensonge, affirmation);
+    assertNull(donc4.getValeur());
   }
 
   @Test
@@ -32,7 +35,7 @@ class EtTest {
     Affirmation verite = new Verite("Lou est beau");
     Affirmation mensonge = new Mensonge("Lou est pauvre");
 
-    Et et = new Et(verite, mensonge);
-    assertEquals("Lou est beau et Lou est pauvre", et.getDescription());
+    Donc donc = new Donc(verite, mensonge);
+    assertEquals("Lou est beau donc Lou est pauvre", donc.getDescription());
   }
 }

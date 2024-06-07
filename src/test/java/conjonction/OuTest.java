@@ -12,7 +12,7 @@ import org.junit.jupiter.api.Test;
 class OuTest {
 
   @Test
-  void test_deuxieme_aff_du_sujet() {
+  void test_get_valeur() {
     Affirmation verite = new Verite("Lou est beau");
     Affirmation mensonge = new Mensonge("Lou est pauvre");
     Affirmation affirmation = new AffirmationSimple("Lou est généreux", null);
