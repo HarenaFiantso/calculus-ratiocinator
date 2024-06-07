@@ -1,5 +1,6 @@
-package com.projet1.model;
+package com.projet1.affirmation;
 
+import com.projet1.Affirmation;
 import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
