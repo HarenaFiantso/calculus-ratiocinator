@@ -1,7 +1,6 @@
 package com.projet1.affirmation;
 
 import com.projet1.Affirmation;
-import lombok.AllArgsConstructor;
 
 public class Mensonge extends Affirmation {
 
